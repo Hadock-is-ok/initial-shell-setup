@@ -16,7 +16,7 @@ chsh -s $(which zsh)
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 
 # Fetch .zshrc from GitHub
-curl -fsSL https://raw.githubusercontent.com/yourusername/your-dotfiles-repo/main/.zshrc -o ~/.zshrc
+curl -fsSL https://raw.githubusercontent.com/NightSlasher35/initial-shell-setup/master/.zshrc -o ~/.zshrc
 
 read -p "Do you want to install pyenv? (y/n): " install_pyenv
 if [ "$install_pyenv" == "y" ]; then
