@@ -31,7 +31,7 @@ fi
 
 read -p "Do you want to install fnm? (y/n): " install_fnm
 if [ "$install_fnm" == "y" ]; then
-    curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
+    bash -c "$(curl -fsSL https://fnm.vercel.app/install)"
 
     echo 'export PATH="$HOME/.fnm:$PATH"' >> ~/.zshrc
     echo 'eval "$(fnm env --multi)"' >> ~/.zshrc
