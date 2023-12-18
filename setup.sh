@@ -26,3 +26,4 @@ fi
 
 chsh -s $(which zsh)
 clear
+sh
