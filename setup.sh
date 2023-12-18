@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# zsh and oh-my-zsh
-if [ -z "$(command -v zsh)" ]; then
-    sudo apt-get install -y zsh
-    [ $? -ne 0 ] && exit 1
-fi
+# Pre-Requisites
+sudo apt-get install git make zsh wget curl
 
+# oh-my-zsh
 export RUNZSH=no
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
@@ -14,8 +12,8 @@ curl -fsSL https://raw.githubusercontent.com/NightSlasher35/initial-shell-setup/
 # Pyenv
 read -p "Do you want to install pyenv? (y/n): " install_pyenv
 if [ "$install_pyenv" == "y" ]; then
-    sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-    libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+    sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
+    libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
     
     curl https://pyenv.run | bash
 fi
